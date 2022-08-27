@@ -1,10 +1,17 @@
 'use strict';
 
-const jwt = require('./jwt');
+// const jwt = require('./jwt');
+// const providers = require('./providers');
+// const user = require('./user');
+// const role = require('./role');
+// const usersPermissions = require('./users-permissions');
+// const providersRegistry = require('./providers-registry');
+
+const jwt = require('@strapi/plugin-users-permissions/server/services/jwt');
 const providers = require('./providers');
-const user = require('./user');
-const role = require('./role');
-const usersPermissions = require('./users-permissions');
+const user = require('@strapi/plugin-users-permissions/server/services/user');
+const role = require('@strapi/plugin-users-permissions/server/services/role');
+const usersPermissions = require('@strapi/plugin-users-permissions/server/services/users-permissions');
 const providersRegistry = require('./providers-registry');
 
 module.exports = {

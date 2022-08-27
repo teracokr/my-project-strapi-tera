@@ -10,10 +10,10 @@
 const crypto = require('crypto');
 const _ = require('lodash');
 const urljoin = require('url-join');
-const { getService } = require('../utils');
-const getGrantConfig = require('./grant-config');
+const { getService } = require('@strapi/plugin-users-permissions/server/utils');
+const getGrantConfig = require('@strapi/plugin-users-permissions/server/bootstrap/grant-config');
 
-const usersPermissionsActions = require('./users-permissions-actions');
+const usersPermissionsActions = require('@strapi/plugin-users-permissions/server/bootstrap/users-permissions-actions');
 
 const initGrant = async (pluginStore) => {
   const apiPrefix = strapi.config.get('api.rest.prefix');

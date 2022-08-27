@@ -9,7 +9,7 @@ const _ = require('lodash');
 const urlJoin = require('url-join');
 
 const { getAbsoluteServerUrl } = require('@strapi/utils');
-const { getService } = require('../utils');
+const { getService } = require('@strapi/plugin-users-permissions/server/utils');
 
 module.exports = ({ strapi }) => {
   /**

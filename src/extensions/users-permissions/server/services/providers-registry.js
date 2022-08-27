@@ -48,15 +48,16 @@ const getInitialProviders = ({ purest }) => ({
   },
   async google({ accessToken }) {
     const google = purest({ provider: 'google' });
-
+    console.log('--------- overriding by tera ----------------')
     return google
-      .query('oauth')
-      .get('tokeninfo')
-      .qs({ accessToken })
+      .get("https://www.googleapis.com/oauth2/v3/userinfo")
+      .auth(accessToken)
       .request()
+      // .then(({ body }) => console.log(body))
       .then(({ body }) => ({
-        username: body.email.split('@')[0],
+        username: body.name, // body.email.split("@")[0],
         email: body.email,
+        avatar: body.picture,
       }));
   },
   async github({ accessToken }) {
