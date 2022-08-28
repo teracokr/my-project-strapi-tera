@@ -49,6 +49,7 @@ const getInitialProviders = ({ purest }) => ({
   async google({ accessToken }) {
     const google = purest({ provider: 'google' });
     console.log('--------- overriding by tera ----------------')
+    console.log(accessToken)
     return google
       .get("https://www.googleapis.com/oauth2/v3/userinfo")
       .auth(accessToken)
